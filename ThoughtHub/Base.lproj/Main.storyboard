@@ -19,6 +19,12 @@
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="zMP-Rc-uHy">
                                 <rect key="frame" x="290" y="338" width="20" height="20"/>
                             </activityIndicatorView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ekd-mu-V54">
+                                <rect key="frame" x="281" y="338" width="38" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="91a-Op-YkC">
                                 <rect key="frame" x="199" y="282" width="203" height="36"/>
                                 <subviews>
@@ -46,10 +52,16 @@
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="91a-Op-YkC" secondAttribute="centerX" id="8c2-55-qEN"/>
                             <constraint firstItem="91a-Op-YkC" firstAttribute="bottom" secondItem="zMP-Rc-uHy" secondAttribute="top" constant="-20" id="HDe-J8-oAq"/>
+                            <constraint firstItem="zMP-Rc-uHy" firstAttribute="centerX" secondItem="Ekd-mu-V54" secondAttribute="centerX" id="PcO-XI-XBZ"/>
                             <constraint firstAttribute="centerY" secondItem="91a-Op-YkC" secondAttribute="centerY" id="bw0-hP-zOH"/>
+                            <constraint firstItem="zMP-Rc-uHy" firstAttribute="centerY" secondItem="Ekd-mu-V54" secondAttribute="centerY" id="g1t-wY-Wt6"/>
                             <constraint firstItem="91a-Op-YkC" firstAttribute="centerX" secondItem="zMP-Rc-uHy" secondAttribute="centerX" id="sF2-ks-mCu"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="zMP-Rc-uHy" id="FOd-rT-XV3"/>
+                        <outlet property="errorLabel" destination="Ekd-mu-V54" id="AKQ-xx-bMh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
