@@ -16,6 +16,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var errorLabel : UILabel?
     @IBOutlet weak var activityIndicator : UIActivityIndicatorView?
 
+    var membersJSON : AnyObject?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -42,11 +44,17 @@ class ViewController: UIViewController {
                     self.errorLabel?.text = membersJSON["message"] as? String
                 } else {
                     // What's should we do here? Read on and we'll find out...
+                    self.membersJSON = membersJSON
+                    self.performSegueWithIdentifier("showMembers", sender: nil)
                 }
             }
         })
 
         membersTask.resume()
+    }
+
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        (segue.destinationViewController as! MembersViewController).membersJSON = self.membersJSON
     }
 
     override func didReceiveMemoryWarning() {
