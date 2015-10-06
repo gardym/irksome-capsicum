@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, AvatarLoaderDelegate {
 
     let orgMembersURL = "https://api.github.com/orgs/thoughtworks/members"
     let memberURL = "https://api.github.com/users/"
@@ -17,6 +17,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var activityIndicator : UIActivityIndicatorView?
 
     var membersJSON : AnyObject?
+    var avatarPaths : [Int : String]?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,9 +44,11 @@ class ViewController: UIViewController {
                     self.errorLabel?.hidden = false
                     self.errorLabel?.text = membersJSON["message"] as? String
                 } else {
-                    // What's should we do here? Read on and we'll find out...
                     self.membersJSON = membersJSON
-                    self.performSegueWithIdentifier("showMembers", sender: nil)
+
+                    var avatarLoader = AvatarLoader(membersJSON: self.membersJSON as! [AnyObject])
+                    avatarLoader.delegate = self
+                    avatarLoader.loadAvatars()
                 }
             }
         })
@@ -54,12 +57,19 @@ class ViewController: UIViewController {
     }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        (segue.destinationViewController as! MembersViewController).membersJSON = self.membersJSON
+        var destinationVC = segue.destinationViewController as! MembersViewController
+        destinationVC.membersJSON = self.membersJSON
+        destinationVC.avatarPaths = self.avatarPaths
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+
+    func avatarsLoaded(avatarloader : AvatarLoader, finishedLoadingImagesToPaths: [Int : String]) {
+        self.avatarPaths = finishedLoadingImagesToPaths
+        self.performSegueWithIdentifier("showMembers", sender: nil)
     }
 }
 

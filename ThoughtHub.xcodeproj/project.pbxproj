@@ -14,6 +14,7 @@
 		27B546971BC2A8B400C48B9D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27B546951BC2A8B400C48B9D /* LaunchScreen.xib */; };
 		27B546A31BC2A8B500C48B9D /* ThoughtHubTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B546A21BC2A8B500C48B9D /* ThoughtHubTests.swift */; };
 		27B546B11BC3C76900C48B9D /* MembersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B546B01BC3C76900C48B9D /* MembersViewController.swift */; };
+		27B546B31BC3CDAC00C48B9D /* AvatarLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B546B21BC3CDAC00C48B9D /* AvatarLoader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		27B546A11BC2A8B500C48B9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		27B546A21BC2A8B500C48B9D /* ThoughtHubTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThoughtHubTests.swift; sourceTree = "<group>"; };
 		27B546B01BC3C76900C48B9D /* MembersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MembersViewController.swift; sourceTree = "<group>"; };
+		27B546B21BC3CDAC00C48B9D /* AvatarLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarLoader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				27B546891BC2A8B400C48B9D /* AppDelegate.swift */,
+				27B546B21BC3CDAC00C48B9D /* AvatarLoader.swift */,
 				27B546B01BC3C76900C48B9D /* MembersViewController.swift */,
 				27B5468E1BC2A8B400C48B9D /* ViewController.swift */,
 				27B546901BC2A8B400C48B9D /* Main.storyboard */,
@@ -218,6 +221,7 @@
 				27B5468F1BC2A8B400C48B9D /* ViewController.swift in Sources */,
 				27B546B11BC3C76900C48B9D /* MembersViewController.swift in Sources */,
 				27B5468A1BC2A8B400C48B9D /* AppDelegate.swift in Sources */,
+				27B546B31BC3CDAC00C48B9D /* AvatarLoader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

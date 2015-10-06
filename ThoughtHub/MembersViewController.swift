@@ -11,7 +11,9 @@ import UIKit
 class MembersViewController: UITableViewController, UITableViewDataSource {
 
     let memberTableCellReuseIdentifier = "MemberCell"
+
     var membersJSON : AnyObject?
+    var avatarPaths : [Int : String]?
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return numberOfMembers()
@@ -23,6 +25,9 @@ class MembersViewController: UITableViewController, UITableViewDataSource {
         if let member = membersArray()[indexPath.row] as? [String : AnyObject] {
             if let login = member["login"] as? String {
                 cell.textLabel?.text = login
+            }
+            if let memberID = member["id"] as? Int, avatarPath = avatarPaths?[memberID] {
+                cell.imageView?.image = UIImage(contentsOfFile: avatarPath)
             }
         }
 
