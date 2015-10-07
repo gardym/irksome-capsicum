@@ -8,12 +8,14 @@
 
 import UIKit
 
-class MembersViewController: UITableViewController, UITableViewDataSource {
+class MembersViewController: UITableViewController, UITableViewDataSource, UITableViewDelegate {
 
     let memberTableCellReuseIdentifier = "MemberCell"
 
     var membersJSON : AnyObject?
     var avatarPaths : [Int : String]?
+
+    var memberJSON : [String : AnyObject]?
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return numberOfMembers()
@@ -42,4 +44,14 @@ class MembersViewController: UITableViewController, UITableViewDataSource {
         return (membersJSON as! [AnyObject]).count
     }
 
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        memberJSON = membersArray()[indexPath.row] as? [String : AnyObject]
+        performSegueWithIdentifier("showMember", sender: nil)
+    }
+
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        (segue.destinationViewController as! MemberWebViewController).memberJSON = memberJSON
+    }
 }
+
+

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		279E52641BC52C4600228C12 /* MemberWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279E52631BC52C4600228C12 /* MemberWebViewController.swift */; };
 		27B5468A1BC2A8B400C48B9D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B546891BC2A8B400C48B9D /* AppDelegate.swift */; };
 		27B5468F1BC2A8B400C48B9D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B5468E1BC2A8B400C48B9D /* ViewController.swift */; };
 		27B546921BC2A8B400C48B9D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27B546901BC2A8B400C48B9D /* Main.storyboard */; };
@@ -28,6 +29,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		279E52631BC52C4600228C12 /* MemberWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberWebViewController.swift; sourceTree = "<group>"; };
 		27B546841BC2A8B400C48B9D /* ThoughtHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThoughtHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27B546881BC2A8B400C48B9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		27B546891BC2A8B400C48B9D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 			children = (
 				27B546891BC2A8B400C48B9D /* AppDelegate.swift */,
 				27B546B21BC3CDAC00C48B9D /* AvatarLoader.swift */,
+				279E52631BC52C4600228C12 /* MemberWebViewController.swift */,
 				27B546B01BC3C76900C48B9D /* MembersViewController.swift */,
 				27B5468E1BC2A8B400C48B9D /* ViewController.swift */,
 				27B546901BC2A8B400C48B9D /* Main.storyboard */,
@@ -220,6 +223,7 @@
 			files = (
 				27B5468F1BC2A8B400C48B9D /* ViewController.swift in Sources */,
 				27B546B11BC3C76900C48B9D /* MembersViewController.swift in Sources */,
+				279E52641BC52C4600228C12 /* MemberWebViewController.swift in Sources */,
 				27B5468A1BC2A8B400C48B9D /* AppDelegate.swift in Sources */,
 				27B546B31BC3CDAC00C48B9D /* AvatarLoader.swift in Sources */,
 			);
@@ -417,6 +421,7 @@
 				27B546A81BC2A8B500C48B9D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		27B546A91BC2A8B500C48B9D /* Build configuration list for PBXNativeTarget "ThoughtHubTests" */ = {
 			isa = XCConfigurationList;
@@ -425,6 +430,7 @@
 				27B546AB1BC2A8B500C48B9D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
